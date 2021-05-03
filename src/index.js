@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const input = document.querySelector("#new-task-description");
-    if(input.value /*no need for !== "" because !== is not & '': is an empty string, which is a falsey value; double negative is a positive, so it can be removed  */) {
-      renderTask (input.value)
+    if(input.value /*no need for !== "" because !== (is not) & "": is an empty string, which is a falsey value; double negative is a positive, so it can be removed  */) {
+      renderTask (input.value);
       event.target.reset();
     }
   });
@@ -24,9 +24,10 @@ function renderTask(task) {
   const list = document.querySelector("#tasks"); // ul element
   list.innerHTML += `<li>${task}</li>`;
   // ALTERNATE WAY BELOW
-  const item = document.createElement("/li"); // li element only in JS 
-  item.innerText = task;
-  list.append(item);
+    // const item = document.createElement("/li"); // li element only in JS 
+    // item.innerText = task;
+    // list.append(item);
+  
   // adding delete button below
   // const deleteButton = document.createElement("p")
   // deleteButton.innerText = "DELETE";
